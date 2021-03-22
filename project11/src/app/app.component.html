@@ -1,0 +1,22 @@
+<div class="container">
+  <div *ngFor="let indicator of indicators">
+    <div
+      *ngIf="indicator.show"
+      class="card"
+      
+    >
+      <h2>Id: {{ indicator.id }}</h2>
+      <p>Датчик {{indicator.id}}</p>
+<div class="row">
+    <div class="col">
+      <p>Статус:  </p> <div class="status col" [ngClass]="{
+        online: indicator.status,
+        offline: !indicator.status
+      }" ></div>
+    </div>
+
+    </div>
+      <button class="btn btn-danger" (click)="indicator.show = false">Удалить карточку {{indicator.id}}</button>
+    </div>
+  </div>
+</div>
